@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **BaatCheet** — AI Personas Chat
 
-## Getting Started
+![BaatCheet Preview](public/og_image.png)
 
-First, run the development server:
+Chat with AI personas of your favorite tech creators. Built with Next.js App Router, Tailwind CSS, and the Vercel AI SDK.
 
+### Features
+- Next.js 15 (App Router) + React 19
+- Tailwind CSS v4 and dark/light theme toggle with no-FoUC init
+- Landing page with animated sections and responsive CTAs
+- Personas grid; “Chat Now” routes to `/chat?persona=<id>`
+- Themed chat UI with streaming via `@ai-sdk/react` `useChat`
+- Typing indicator during streaming
+- Smart auto-scroll
+- Markdown (GFM) rendering; links open in a new tab
+- Syntax highlighting (highlight.js GitHub theme)
+- Copy-to-clipboard button on code blocks
+
+## Quickstart
+
+Prerequisites:
+- Node.js 18+ (or 20+)
+- pnpm 9+
+
+Install and run:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
+```
+Open http://localhost:3000
+
+Production build:
+```bash
+pnpm build
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment
+Create a `.env.local` at the project root. Common variables:
+```
+GOOGLE_GENERATIVE_AI_API_KEY=your-google-api-key
+```
+```ini
+# Used for absolute Open Graph URLs and canonical tags
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Social preview (OG/Twitter)
+- Global metadata is configured in `app/layout.tsx`.
+- We use `public/og_image.png` as the Open Graph and Twitter image.
+- To replace the preview image, add your file to `public/og_image.png` (recommended size 1200×630).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure (high-level)
+- `app/` — App Router pages, layout, global styles
+- `components/` — UI components (Navbar, Hero, Personas, Chat, etc.)
+- `lib/` — data and utilities
+- `public/` — static assets, including `og_image.png`
 
-## Learn More
+## Chat UX details
+- Streaming: Messages stream in via the Vercel AI SDK. A typing indicator appears for the assistant while streaming.
+- Auto-scroll: The view auto-scrolls only when within ~100px of the bottom. If you scroll up, auto-scroll pauses until you return near the bottom.
+- Markdown: GFM enabled (tables, lists, task items). External links open in a new tab.
+- Code: Highlighted with highlight.js (GitHub theme) and a Copy button on each block.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
+- Vercel is recommended. Ensure environment variables (like `NEXT_PUBLIC_SITE_URL` and provider API keys) are configured in your hosting dashboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Made with Next.js, Tailwind CSS, and the Vercel AI SDK.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Made with ❤️ by Piyush
