@@ -14,9 +14,51 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "BaatCheet | Personas";
+const description = "Chat with AI personas of your favorite tech creators";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "BaatCheet | Personas",
-  description: "Chat with AI personas of your favorite tech creators",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  keywords: [
+    "AI",
+    "chat",
+    "personas",
+    "developers",
+    "Next.js",
+    "Tailwind",
+  ],
+  openGraph: {
+    title,
+    description,
+    url: "/",
+    siteName: "BaatCheet",
+    images: [
+      {
+        url: "/og_image.png",
+        width: 1200,
+        height: 630,
+        alt: "BaatCheet — Chat with AI Personas",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og_image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
