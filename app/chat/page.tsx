@@ -93,7 +93,7 @@ function ChatPageInner() {
                     <ChatInput
                         onSend={handleOnMessageSend}
                         className="w-full md:w-auto"
-                        disabled={status == "streaming" || status == "submitted"}
+                        disabled={status == "ready"}
                         stop={stop}
                     />
                 </div>
