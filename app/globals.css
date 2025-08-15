@@ -1,0 +1,164 @@
+@import "../node_modules/highlight.js/styles/github-dark.min";
+@import "tailwindcss" important;
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme inline {
+  --background: #fff7f0;
+  --foreground: #0b1220;
+  --accent: #f59e0b;
+  --accent-600: #d97706;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-red-100);
+  border-radius: 9999px;
+  transition: "background" 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-600);
+}
+
+code::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0f1a;
+    --foreground: #e5edf8;
+    --accent: #f59e0b;
+    --accent-600: #d97706;
+  }
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #FF9632;
+  color: var(--foreground);
+}
+
+.bg-dots {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.06;
+}
+
+.bg-soft-gradient {
+  background-image: radial-gradient(800px 300px at 50% -50%, rgba(251, 146, 60, .25), transparent 60%);
+}
+
+.dark-landing-bg {
+  background-image: radial-gradient(600px 400px at -10% 10%, rgba(217, 119, 6, .28), transparent 60%),
+    radial-gradient(800px 300px at 80% -20%, rgba(251, 146, 60, .15), transparent 60%);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.light {
+  --background: #fff7f0;
+  --foreground: #0b1220;
+  --accent: #f59e0b;
+  --accent-600: #d97706;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #0b0f1a;
+  --foreground: #e5edf8;
+  --accent: #f59e0b;
+  --accent-600: #d97706;
+  color-scheme: dark;
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: -100% auto auto -100%;
+  width: 50%;
+  height: 300%;
+  transform: rotate(35deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .35), transparent);
+  transition: transform .6s ease;
+}
+
+.btn-shine:hover::after {
+  transform: translateX(300%) rotate(35deg);
+}
+
+.headline-underline {
+  position: relative;
+}
+
+.headline-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 9999px;
+  opacity: .9;
+}
+
+.card-hover {
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(217, 119, 6, .35);
+  border-color: color-mix(in oklab, var(--accent) 40%, #ffffff 60%);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .75rem;
+  border: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(255, 255, 255, .04);
+  border-radius: 9999px;
+  font-size: .875rem;
+  color: inherit;
+}
+
+.chip:hover {
+  background: rgba(255, 255, 255, .06);
+}
