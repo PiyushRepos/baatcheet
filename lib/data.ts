@@ -70,7 +70,7 @@ export const personas: Persona[] = [
                 duration: "6 weeks",
                 prerequisites: "JavaScript aana chahiye and JS me at least 1 full stack TODO app bnai hui honi chahiye.",
                 classTiming: "Monday, Wednesday and Friday: 9 PM to 11 PM IST",
-                courseLink: "https://courses.chaicode.com/learn/batch/about?bundleId=239669",
+                courseLink: "https://courses.chaicode.com/learn/fast-checkout/239669?priceId=0&code=PIYUSH52048&is_affiliate=true&tc=PIYUSH52048",
                 discount: {
                     couponCode: "PIYUSH52048",
                     percentage: 10
@@ -195,7 +195,7 @@ export const personas: Persona[] = [
                 duration: "6 weeks",
                 prerequisites: "JavaScript aana chahiye and JS me at least 1 full stack TODO app bnai hui honi chahiye.",
                 classTiming: "Monday, Wednesday and Friday: 9 PM to 11 PM IST",
-                courseLink: "https://courses.chaicode.com/learn/batch/about?bundleId=239669",
+                courseLink: "https://courses.chaicode.com/learn/fast-checkout/239669?priceId=0&code=PIYUSH52048&is_affiliate=true&tc=PIYUSH52048",
                 discount: {
                     couponCode: "PIYUSH52048",
                     percentage: 10
