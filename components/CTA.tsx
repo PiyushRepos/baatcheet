@@ -17,7 +17,7 @@ export default function CTA() {
             </Reveal>
             <Reveal delay={160}>
                 <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-md mx-auto">
-                    <GlowButton as="a" href="#chat" className="btn-shine group">Start free</GlowButton>
+                    <GlowButton as="a" href="/chat?persona=hitesh" className="btn-shine group">Start free</GlowButton>
                     <Link className="rounded-full border border-orange-300/60 text-orange-700 dark:text-orange-300 w-full sm:w-auto px-4 sm:px-5 py-2.5 sm:py-3 text-sm sm:text-base text-center hover:bg-orange-50/10 transition-colors" href="#learn">How it works</Link>
                 </div>
             </Reveal>
