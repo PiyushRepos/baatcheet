@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { DefaultChatTransport } from 'ai';
 import { useChat } from '@ai-sdk/react';
 import { Suspense, useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 
 function getPersonaName(persona: string | null) {
     const q = (persona || "").toLowerCase();
@@ -32,6 +33,10 @@ function ChatPageInner() {
     const [autoScroll, setAutoScroll] = useState(true);
 
     const handleOnMessageSend = async (text: string) => {
+        if (status == "streaming" || status == "submitted") {
+            toast.info("Previous message is still being processed...");
+            return;
+        };
         await sendMessage({ text });
     };
     useEffect(() => {
