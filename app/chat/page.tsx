@@ -6,7 +6,7 @@ import { Persona, personas } from "@/lib/data";
 import { useSearchParams } from "next/navigation";
 import { DefaultChatTransport } from 'ai';
 import { useChat } from '@ai-sdk/react';
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
 function getPersonaName(persona: string | null) {
     const q = (persona || "").toLowerCase();
@@ -14,7 +14,7 @@ function getPersonaName(persona: string | null) {
     return p as Persona;
 }
 
-export default function ChatPage() {
+function ChatPageInner() {
     const searchParams = useSearchParams();
     const persona = searchParams.get("persona");
     const { id, name, avatar, greetings } = getPersonaName(persona);
@@ -99,6 +99,14 @@ export default function ChatPage() {
                 </div>
             </div>
         </section>
+    );
+}
+
+export default function ChatPage() {
+    return (
+        <Suspense fallback={<div className="mx-auto w-full max-w-5xl sm:px-4 py-6 text-sm text-neutral-500">Loading chat…</div>}>
+            <ChatPageInner />
+        </Suspense>
     );
 }
 

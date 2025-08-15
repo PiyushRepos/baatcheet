@@ -6,6 +6,7 @@ import rehypeExternalLinks from "rehype-external-links";
 import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import { toast } from "sonner";
+import Image from "next/image";
 
 function cx(...classes: Array<string | false | null | undefined>) {
     return classes.filter(Boolean).join(" ");
@@ -27,7 +28,7 @@ export default function ChatBubble({ role, text, personaImage }: IChatBubble) {
             {/* Avatar on top for persona */}
             {!isUser && (
                 <div className="flex justify-start mb-2">
-                    <img
+                    <Image
                         src={personaImage || "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"}
                         alt="Persona"
                         className="w-8 h-8 rounded-full object-cover border border-orange-300 dark:border-slate-700"
@@ -39,7 +40,7 @@ export default function ChatBubble({ role, text, personaImage }: IChatBubble) {
                 {/* User avatar on right */}
                 {isUser && (
                     <div className="flex items-end order-2 ml-2">
-                        <img
+                        <Image
                             src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                             alt="You"
                             className="w-8 h-8 rounded-full object-cover border border-orange-300 dark:border-slate-700"
