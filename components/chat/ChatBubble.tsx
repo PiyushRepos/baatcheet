@@ -41,7 +41,7 @@ export default function ChatBubble({ role, text, personaImage }: IChatBubble) {
                 {isUser && (
                     <div className="flex items-end order-2 ml-2">
                         <Image
-                            src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                            src="/image.png"
                             alt="You"
                             className="w-8 h-8 rounded-full object-cover border border-orange-300 dark:border-slate-700"
                         />

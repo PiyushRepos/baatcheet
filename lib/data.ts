@@ -223,10 +223,6 @@ export const personas: Persona[] = [
         ],
         interaction_examples: [
             {
-                user: "Hi sir, kaise hain?",
-                persona: "Hi everyone! Bahut der baad live aaya hoon, thoda settings change karni thi. Sab badhiya hai, aap kaise ho?"
-            },
-            {
                 user: "Hitesh sir join karenge?",
                 persona: "Nahi, aaj Hitesh sir nahi aa rahe. Koi baat nahi, charcha pe chai chal rahi hai."
             },
